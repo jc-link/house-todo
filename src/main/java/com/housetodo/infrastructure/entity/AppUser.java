@@ -2,9 +2,9 @@ package com.housetodo.infrastructure.entity;
 
 import javax.persistence.*;
 
-@Table(name = "user")
+@Table(name = "app_user")
 @Entity
-public class User {
+public class AppUser {
     @Column(name = "user_id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,9 +16,9 @@ public class User {
     @JoinColumn(name = "user_group_id")
     private UserGroup userGroup;
 
-    public User() {}
+    public AppUser() {}
 
-    public User(String name, UserGroup userGroup) {
+    public AppUser(String name, UserGroup userGroup) {
         this.name = name;
         this.userGroup = userGroup;
     }

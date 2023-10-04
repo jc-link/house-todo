@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.io.Serializable;
 
-public interface TaskScheduleRepository extends JpaRepository<TaskSchedule, Serializable>, ITaskRepository {
+public interface TaskScheduleRepository extends JpaRepository<TaskSchedule, Serializable>, ITaskScheduleRepository {
 }

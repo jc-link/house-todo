@@ -1,6 +1,6 @@
 package com.housetodo.controller;
 
-import com.housetodo.domain.service.IUserGroupService;
+import com.housetodo.domain.service.UserGroupService;
 import com.housetodo.infrastructure.entity.UserGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,7 +13,7 @@ public class Controller {
 
     @Autowired
     @Qualifier("userGroupService")
-    private IUserGroupService userGroupService;
+    private UserGroupService userGroupService;
     @GetMapping("/test")
     public String sendMessage() {
         return "Hello there test!";

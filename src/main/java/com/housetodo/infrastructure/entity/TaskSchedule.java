@@ -16,20 +16,27 @@ public class TaskSchedule {
     private Task task;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "created_by")
+    private AppUser createdUser;
 
-    @Column(name = "do_until")
-    private Date doUntil;
+    @ManyToOne
+    @JoinColumn(name = "took_by")
+    private AppUser tookUser;
 
     private boolean completed;
 
+    @Column(name = "creation_date")
+    private Date creationDate;
+    @Column(name = "completed_date")
+    private Date completedDate;
+
+
     public TaskSchedule () {}
 
-    public TaskSchedule(Task task, User user, Date doUntil) {
+    public TaskSchedule(Task task, AppUser createdUser, Date creationDate) {
         this.task = task;
-        this.user = user;
-        this.doUntil = doUntil;
+        this.createdUser = createdUser;
+        this.creationDate = creationDate;
         this.completed = false;
     }
 
@@ -46,20 +53,20 @@ public class TaskSchedule {
         this.task = task;
     }
 
-    public User getUser() {
-        return user;
+    public AppUser getCreatedUser() {
+        return createdUser;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setCreatedUser(AppUser createdUser) {
+        this.createdUser = createdUser;
     }
 
-    public Date getDoUntil() {
-        return doUntil;
+    public AppUser getTookUser() {
+        return tookUser;
     }
 
-    public void setDoUntil(Date doUntil) {
-        this.doUntil = doUntil;
+    public void setTookUser(AppUser tookUser) {
+        this.tookUser = tookUser;
     }
 
     public boolean isCompleted() {
@@ -68,5 +75,21 @@ public class TaskSchedule {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public Date getCompletedDate() {
+        return completedDate;
+    }
+
+    public void setCompletedDate(Date completedDate) {
+        this.completedDate = completedDate;
     }
 }
