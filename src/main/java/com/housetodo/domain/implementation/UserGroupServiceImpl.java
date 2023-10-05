@@ -20,4 +20,34 @@ public class UserGroupServiceImpl implements UserGroupService {
         userGroup.setCode(uniqueCode);
         return userGroupRepository.save(userGroup);
     }
+
+    @Override
+    public UserGroup updateUserGroup(UserGroup userGroup) {
+        return userGroupRepository.save(userGroup);
+    }
+
+    @Override
+    public UserGroup getUserGroup(String userGroupId) {
+        try {
+            return userGroupRepository.getById(Integer.parseInt(userGroupId));
+        } catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public UserGroup getUserGroupByCode(String code) {
+        return userGroupRepository.getByCode(code);
+    }
+
+    @Override
+    public int deleteUserGroup(String userGroupId) {
+        try {
+            return userGroupRepository.deleteById(Integer.parseInt(userGroupId));
+        } catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
+            return 0;
+        }
+    }
 }
