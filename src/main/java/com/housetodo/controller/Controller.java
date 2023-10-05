@@ -19,9 +19,5 @@ public class Controller {
         return "Hello there test!";
     }
 
-    @PostMapping(path = "/createGroup", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public UserGroup createGroup(@RequestBody UserGroup userGroup) {
-        return userGroupService.createUserGroup(userGroup);
 
-    }
 }

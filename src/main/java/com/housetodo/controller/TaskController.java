@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/ms/task")
+@RequestMapping("/api/task")
 public class TaskController {
     @Autowired
     @Qualifier("taskService")
@@ -46,10 +46,6 @@ public class TaskController {
     public Task updateTask(@Valid @RequestBody Task task) {
         return taskService.saveTask(task);
     }
-    /*@PostMapping(path = "/update", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Task updateTask(@RequestBody Task task) {
-        return taskService.saveTask(task);
-    }*/
 
     @DeleteMapping(path = "/{id}")
     public int deleteTask(@PathVariable String id) {
