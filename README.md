@@ -1,2 +1,2 @@
 # house-todo
-A microservice to manage tasks from a house
+An API to manage tasks from a house
