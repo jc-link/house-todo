@@ -44,6 +44,9 @@ public class TaskSchedule {
         return taskScheduleId;
     }
 
+    public void setTaskScheduleId(int taskScheduleId) {
+        this.taskScheduleId = taskScheduleId;
+    }
 
     public Task getTask() {
         return task;
